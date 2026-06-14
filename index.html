@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>농구 스탯 관리</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>내 농구 스탯 기록</h1>
+
+    <div class="form-box">
+      <h2>경기 기록 입력</h2>
+      <form id="statsForm">
+        <input type="date" id="date" required />
+        <input type="text" id="opponent" placeholder="상대팀" required />
+        <input type="number" id="points" placeholder="득점" required />
+        <input type="number" id="rebounds" placeholder="리바운드" required />
+        <input type="number" id="assists" placeholder="어시스트" required />
+        <input type="number" id="blocks" placeholder="블락" required />
+        <button type="submit">기록 저장</button>
+      </form>
+    </div>
+
+    <div class="summary-box">
+      <h2>평균 스탯</h2>
+      <p>경기 수: <span id="gamesCount">0</span></p>
+      <p>평균 득점: <span id="avgPoints">0</span></p>
+      <p>평균 리바운드: <span id="avgRebounds">0</span></p>
+      <p>평균 어시스트: <span id="avgAssists">0</span></p>
+      <p>평균 블락: <span id="avgBlocks">0</span></p>
+    </div>
+
+    <div class="chart-box">
+      <h2>경기별 득점 그래프</h2>
+      <canvas id="pointsChart"></canvas>
+    </div>
+
+    <div class="table-box">
+      <h2>경기 기록</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>날짜</th>
+            <th>상대팀</th>
+            <th>득점</th>
+            <th>리바운드</th>
+            <th>어시스트</th>
+            <th>블락</th>
+          </tr>
+        </thead>
+        <tbody id="statsTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
